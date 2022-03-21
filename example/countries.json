@@ -1,0 +1,72 @@
+[
+{
+  "model": "countries.country",
+  "pk": 1,
+  "fields": {
+    "name": "United States of America"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 2,
+  "fields": {
+    "name": "China"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 3,
+  "fields": {
+    "name": "Italy"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 4,
+  "fields": {
+    "name": "France"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 5,
+  "fields": {
+    "name": "Greece"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 6,
+  "fields": {
+    "name": "Turkey"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 7,
+  "fields": {
+    "name": "Brazil"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 8,
+  "fields": {
+    "name": "Germany"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 9,
+  "fields": {
+    "name": "Canada"
+  }
+},
+{
+  "model": "countries.country",
+  "pk": 10,
+  "fields": {
+    "name": "Japan"
+  }
+}
+]
