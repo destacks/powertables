@@ -1,0 +1,36 @@
+[
+{
+  "model": "contacts.company",
+  "pk": 1,
+  "fields": {
+    "name": "ACME Inc."
+  }
+},
+{
+  "model": "contacts.department",
+  "pk": 1,
+  "fields": {
+    "name": "HR"
+  }
+},
+{
+  "model": "contacts.position",
+  "pk": 1,
+  "fields": {
+    "name": "Director of Employee Engagement"
+  }
+},
+{
+  "model": "contacts.contact",
+  "pk": 1,
+  "fields": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "company": 1,
+    "department": 1,
+    "position": 1,
+    "email": "john.doe@acme.com",
+    "phone": "+1234567890"
+  }
+}
+]
