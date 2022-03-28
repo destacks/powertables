@@ -61,3 +61,7 @@
 - SOLID-Principles
 - AOP
 - ROCA
+
+## Shell commands
+
+- `python manage.py dumpdata contacts --indent 2 > contacts.json`
