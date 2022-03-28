@@ -1,4 +1,46 @@
+<style>
+    body {
+        font-family: sans-serif;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #1b1b1b;
+        padding: .5rem;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #eeeeee;
+    }
+</style>
 <h1>Contacts</h1>
-{% for contact in contact_list %}
-{{ contact }}
-{% endfor %}
+<table>
+    <thead>
+    <tr>
+        <th>Company</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for contact in contact_list %}
+        <tr>
+            <td>{{ contact.company }}</td>
+            <td>{{ contact.first_name }}</td>
+            <td>{{ contact.last_name }}</td>
+            <td>{{ contact.department }}</td>
+            <td>{{ contact.position }}</td>
+            <td>{{ contact.email }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
