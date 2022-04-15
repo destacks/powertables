@@ -1,4 +1,5 @@
-Django
 black
+Django
+Faker
 isort
 pre-commit

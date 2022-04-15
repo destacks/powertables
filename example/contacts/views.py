@@ -8,6 +8,7 @@ from .models import Contact
 
 class PowerTableView(FormMixin, ListView):
     model = None
+    paginate_by = 50
 
     @staticmethod
     def get_model_fields(model: models.Model):

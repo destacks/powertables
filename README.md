@@ -65,6 +65,7 @@
 ## Shell commands
 
 - `python manage.py dumpdata contacts --indent 2 > contacts.json`
+- `python manage.py shell < generate_fake_data.py`
 
 
 ## Knowledge

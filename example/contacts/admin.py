@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Company, Contact, Department, Position
+from .models import Company, Contact, Position
 
 
 @admin.register(Contact)
@@ -10,11 +10,6 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(Department)
-class DepartmentAdmin(admin.ModelAdmin):
     pass
 
 
