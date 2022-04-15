@@ -1,0 +1,26 @@
+exclude: 'node_modules|.git'
+default_stages: [ commit ]
+fail_fast: true
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: trailing-whitespace
+        files: ^.*\.(css|html|js|json|md|py|rst|sh|scss)$
+
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: black
+        language: python
+        types: [ python ]
+
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        language: python
+        types: [ python ]

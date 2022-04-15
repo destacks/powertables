@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import ContactListView
+from .views import ContactPowerTableView
 
 app_name = "contacts"
 urlpatterns = [
-    path("", ContactListView.as_view(), name="list"),
+    path("", ContactPowerTableView.as_view(), name="list"),
 ]

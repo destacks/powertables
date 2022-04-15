@@ -65,3 +65,8 @@
 ## Shell commands
 
 - `python manage.py dumpdata contacts --indent 2 > contacts.json`
+
+
+## Knowledge
+
+- [Form inside a table](https://stackoverflow.com/a/5967613)
