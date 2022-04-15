@@ -22,15 +22,15 @@
     <table>
         <thead>
         <tr>
-            <th>Company</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Company</th>
             <th>Position</th>
             <th>Email</th>
         <tr>
-            <th>{{ form.company }}</th>
             <th>{{ form.first_name }}</th>
             <th>{{ form.last_name }}</th>
+            <th>{{ form.company }}</th>
             <th>{{ form.position }}</th>
             <th>{{ form.email }}</th>
         </tr>
@@ -38,9 +38,9 @@
         <tbody>
         {% for contact in contact_list %}
             <tr>
-                <td>{{ contact.company }}</td>
                 <td>{{ contact.first_name }}</td>
                 <td>{{ contact.last_name }}</td>
+                <td>{{ contact.company }}</td>
                 <td>{{ contact.position }}</td>
                 <td>{{ contact.email }}</td>
             </tr>

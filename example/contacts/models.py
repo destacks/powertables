@@ -1,8 +1,21 @@
 from django.db import models
 
+from .utils import get_model_fields
+
+
+class PowerTableManager(models.Manager):
+    def get_queryset(self):
+        return (
+            super()
+            .get_queryset()
+            .order_by(*get_model_fields(self.model, option="name"))
+        )
+
 
 class Company(models.Model):
     name = models.CharField(max_length=255, unique=True)
+
+    objects = PowerTableManager()
 
     class Meta:
         verbose_name_plural = "companies"
@@ -15,6 +28,8 @@ class Company(models.Model):
 
 class Position(models.Model):
     name = models.CharField(max_length=255, unique=True)
+
+    objects = PowerTableManager()
 
     def __str__(self):
         return self.name

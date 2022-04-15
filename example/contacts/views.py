@@ -1,23 +1,20 @@
-from django.db import models
 from django.forms import modelform_factory
 from django.views.generic import ListView
 from django.views.generic.edit import FormMixin
 
 from .models import Contact
+from .utils import get_model_fields
 
 
 class PowerTableView(FormMixin, ListView):
     model = None
     paginate_by = 50
 
-    @staticmethod
-    def get_model_fields(model: models.Model):
-        return [field for field in model._meta.get_fields() if field.column != "id"]
-
     def get_form_class(self):
-        return modelform_factory(
-            self.model, fields=[f.name for f in self.get_model_fields(self.model)]
+        model_form_meta = modelform_factory(
+            self.model, fields=get_model_fields(self.model, option="name")
         )
+        return model_form_meta
 
     def get_form_kwargs(self):
         kwargs = {
@@ -35,10 +32,11 @@ class PowerTableView(FormMixin, ListView):
             f"{field.column}__in": [
                 item for item in form.data.getlist(field.name) if item
             ]
-            for field in self.get_model_fields(self.model)
+            for field in get_model_fields(self.model)
             if [item for item in form.data.getlist(field.name) if item]
         }
-        return queryset.filter(**kwargs)
+        fields = get_model_fields(self.model, option="name")
+        return queryset.filter(**kwargs).order_by(*fields)
 
 
 class ContactPowerTableView(PowerTableView):
