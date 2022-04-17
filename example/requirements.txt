@@ -1,5 +1,6 @@
 black
 Django
 Faker
+faker_airtravel
 isort
 pre-commit

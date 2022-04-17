@@ -1,0 +1,53 @@
+<style>
+    body {
+        font-family: sans-serif;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #1b1b1b;
+        padding: .5rem;
+        text-align: left;
+    }
+</style>
+<h1>Airports</h1>
+<form onchange="this.submit()"
+      id="table-search-form"
+      action="{% url 'airports:list' %}"
+      method="GET">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>IATA</th>
+            <th>ICAO</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+        <tr>
+            <th>{{ form.name }}</th>
+            <th>{{ form.iata }}</th>
+            <th>{{ form.icao }}</th>
+            <th>{{ form.city }}</th>
+            <th>{{ form.state }}</th>
+            <th>{{ form.country }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for airport in airport_list %}
+            <tr>
+                <td>{{ airport.name }}</td>
+                <td>{{ airport.iata }}</td>
+                <td>{{ airport.icao }}</td>
+                <td>{{ airport.city }}</td>
+                <td>{{ airport.state }}</td>
+                <td>{{ airport.country }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</form>

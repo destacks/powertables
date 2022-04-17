@@ -3,52 +3,67 @@
 # - "python manage.py shell < generate_fake_data.py"
 import random
 
-from contacts.models import Company, Contact, Position
+from airports.models import Airport, City, Country, Iata, Icao, State
+from django.db.utils import IntegrityError
 from faker import Faker
+from faker_airtravel import AirTravelProvider
 
 fake = Faker()
-n = 250
-m = 10000
+fake.add_provider(AirTravelProvider)
 
-print("\nSTART Bulk create companies.")
-company_names = []
+n = 1000
+
+print("\n-- START airports creation --\n")
+
+airports = []
+counter = 1
 for index in range(0, n):
-    name = fake.company()
-    company_names.append(name)
-company_names = set(company_names)
-companies = []
-for name in company_names:
-    companies.append(Company(name=name))
-Company.objects.bulk_create(companies)
-companies = list(Company.objects.all())
-print("END Bulk create companies.")
+    try:
+        flight = fake.flight()
+        airport_obj = fake.airport_object()
 
+        name = airport_obj["airport"]
+        if not name:
+            continue
 
-print("\nSTART Bulk create positions.")
-position_names = []
-for index in range(0, n):
-    name = fake.job()
-    position_names.append(name)
-position_names = set(position_names)
-positions = []
-for name in position_names:
-    positions.append(Position(name=name))
-Position.objects.bulk_create(positions)
-positions = list(Position.objects.all())
-print("END Bulk create positions.")
+        iata_name = airport_obj["iata"]
+        if not iata_name:
+            continue
+        iata = Iata.objects.get_or_create(name=iata_name)[0]
 
+        icao_name = airport_obj["icao"]
+        if not icao_name:
+            continue
+        icao = Icao.objects.get_or_create(name=icao_name)[0]
 
-print("\nSTART Bulk create contacts.")
-contacts = []
-for index in range(0, m):
-    contact = Contact(
-        first_name=fake.first_name(),
-        last_name=fake.last_name(),
-        company=random.choice(companies),
-        position=random.choice(positions),
-        email=fake.email(),
-    )
-    contacts.append(contact)
+        city_name = airport_obj["city"]
+        if not city_name:
+            continue
+        city = City.objects.get_or_create(name=city_name)[0]
 
-Contact.objects.bulk_create(contacts)
-print("END Bulk create contacts.\n")
+        state_name = airport_obj["state"]
+        if not state_name:
+            continue
+        state = State.objects.get_or_create(name=state_name)[0]
+
+        country_name = airport_obj["country"]
+        if not country_name:
+            continue
+        country = Country.objects.get_or_create(name=country_name)[0]
+
+        airport = Airport.objects.get_or_create(
+            name=name,
+            iata=iata,
+            icao=icao,
+            city=city,
+            state=state,
+            country=country,
+        )
+        airports.append(airport)
+
+        print(counter, "of", n, airport)
+        counter += 1
+    except IntegrityError:
+        print("IntegrityError for", airport_obj)
+
+print("\n-- END airports creation --\n")

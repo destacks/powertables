@@ -6,7 +6,7 @@ from django.forms import modelform_factory
 from django.views.generic import ListView
 from django.views.generic.edit import FormMixin
 
-from .models import Contact
+from .models import Airport
 from .utils import get_model_fields
 
 
@@ -41,7 +41,7 @@ class PowerTableView(FormMixin, ListView):
             for field in get_model_fields(self.model)
             if self.get_field_value_list(field.name)
         ]
-        field_names = [field["field"].name for field in fields]
+        field_names = get_model_fields(self.model, option="name")
         query = None
         for field in fields:
             value_list = field["value_list"]
@@ -73,5 +73,5 @@ class PowerTableView(FormMixin, ListView):
             return queryset.filter(query).order_by(*field_names)
 
 
-class ContactPowerTableView(PowerTableView):
-    model = Contact
+class AirportPowerTableView(PowerTableView):
+    model = Airport
