@@ -1,0 +1,60 @@
+{% load powertable_tags %}
+<div class="sorting_item">
+    <div>
+        <input type="radio" class="sorting_input" id="sorting_{{ field }}_asc"
+               name="sorting_{{ field }}"
+               value="asc"
+                {% for key, value in request.GET.items %}
+                    {% if key == field|with_sorting_prefix and value == "asc" %}
+               checked
+                    {% endif %}
+                {% endfor %}
+        >
+        <label for="sorting_{{ field }}_asc"><i class="sorting asc"></i></label>
+    </div>
+    <div>
+        <input type="radio" class="sorting_input" id="sorting_{{ field }}_desc"
+               name="sorting_{{ field }}"
+               value="desc"
+                {% for key, value in request.GET.items %}
+                    {% if key == field|with_sorting_prefix and value == "desc" %}
+               checked
+                    {% endif %}
+                {% endfor %}
+        >
+        <label for="sorting_{{ field }}_desc"><i class="sorting desc"></i></label>
+    </div>
+</div>
+<style>
+    .sorting_item {
+        display: inline-block;
+    }
+
+    .sorting_input {
+        display: none;
+    }
+
+    .sorting {
+        border: solid hsl(0, 0%, 50%);
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    .sorting_input:checked + label > .sorting {
+        border: solid hsl(0, 0%, 0%);
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    .asc {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .desc {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+</style>

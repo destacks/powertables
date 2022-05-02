@@ -13,6 +13,11 @@
         padding: .5rem;
         text-align: left;
     }
+
+    .input_container {
+        display: flex;
+        justify-content: space-between;
+    }
 </style>
 <h1>Airports</h1>
 <form onchange="this.submit()"
@@ -22,19 +27,18 @@
     <table>
         <thead>
         <tr>
-            <th>Name</th>
-            <th>IATA</th>
-            <th>ICAO</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Country</th>
+            {% for field in form %}
+                <th>{{ field.label }}</th>
+            {% endfor %}
         <tr>
-            <th>{{ form.name }}</th>
-            <th>{{ form.iata }}</th>
-            <th>{{ form.icao }}</th>
-            <th>{{ form.city }}</th>
-            <th>{{ form.state }}</th>
-            <th>{{ form.country }}</th>
+            {% for field in form %}
+                <th>
+                    <div class="input_container">
+                        <div>{{ field }}</div>
+                        {% include "airports/_arrows.html" with field=field.name %}
+                    </div>
+                </th>
+            {% endfor %}
         </tr>
         </thead>
         <tbody>

@@ -67,10 +67,22 @@ class PowerTableView(FormMixin, ListView):
                 else:
                     query.add(subquery, Q.AND)
 
+        # Sorting
+        sorted_field_names = []
+        for field_name in field_names:
+            key = f"sorting_{field_name}"
+            if key in self.request.GET.keys():
+                if self.request.GET[key] == "asc":
+                    sorted_field_names.append(field_name)
+                else:
+                    sorted_field_names.append(f"-{field_name}")
+        if not sorted_field_names:
+            sorted_field_names = field_names
+
         if query is None:
-            return queryset.order_by(*field_names)
+            return queryset.order_by(*sorted_field_names)
         else:
-            return queryset.filter(query).order_by(*field_names)
+            return queryset.filter(query).order_by(*sorted_field_names)
 
 
 class AirportPowerTableView(PowerTableView):
