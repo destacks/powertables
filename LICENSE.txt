@@ -1,0 +1,7 @@
+License
+
+This project is licensed under dual Free Software (AGPL v3+) and commercial license. If
+you want to obtain a commercial license, please write to: info@destacks.com
+
+If you want to read the AGPL license text, please look at the file LICENSE.AGPL.txt in the
+root folder of this project.
