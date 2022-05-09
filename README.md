@@ -56,3 +56,8 @@ conditions of the above sections are kept in the merged project.
 
 Parts of this project might be extracted and used in other projects by us in the future,
 but only if the conditions of the above sections are kept in the other projects.
+
+## Affiliation
+
+This project is independent and not endorsed by or affiliated with the Django Software
+Foundation. Django is a registered trademark of the Django Software Foundation.
