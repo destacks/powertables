@@ -3,8 +3,8 @@
 ## About
 
 Destacks Powertable is a sortable filter table implementation for the Django web
-framework and might be extended to be used by other frameworks and programming languages
-in the future.
+framework and might be extended to be used with other frameworks and programming
+languages in the future.
 
 ## Project State
 
@@ -57,7 +57,7 @@ conditions of the above sections are kept in the merged project.
 Parts of this project might be extracted and used in other projects by us in the future,
 but only if the conditions of the above sections are kept in the other projects.
 
-## Affiliation
+## Affiliation (or lack thereof)
 
 This project is independent and not endorsed by or affiliated with the Django Software
 Foundation. Django is a registered trademark of the Django Software Foundation.
