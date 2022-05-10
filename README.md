@@ -1,5 +1,7 @@
 # Destacks Powertables
 
+Link: [github.com/destacks/powertables](https://github.com/destacks/powertables)
+
 ## About
 
 Destacks Powertables is a sortable filter table implementation for the Django web
