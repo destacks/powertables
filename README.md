@@ -61,7 +61,7 @@ but only if the conditions of the above sections are kept in the other projects.
 This project is independent and not endorsed by or affiliated with the Django Software
 Foundation. Django is a registered trademark of the Django Software Foundation.
 
-# Outlook
+## Outlook
 
 Destacks Powertables might be extended to be used with other frameworks and programming
 languages in the future.
