@@ -15,5 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Pluralize project name
 - Move generic template and tag to powertables app
 - Extract generic powertables app in example
