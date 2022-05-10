@@ -1,4 +1,4 @@
-from example.powertables.views import PowertableView
+from powertables.views import PowertableView
 
 from .models import Airport
 

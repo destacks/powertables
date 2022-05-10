@@ -1,6 +1,6 @@
 from django.db import models
 
-from example.powertables.utils import get_model_fields
+from .utils import get_model_fields
 
 
 class PowertableManager(models.Manager):

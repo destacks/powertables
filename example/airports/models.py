@@ -1,6 +1,5 @@
 from django.db import models
-
-from example.powertables.models import PowertableModel
+from powertables.models import PowertableModel
 
 
 class Iata(PowertableModel):

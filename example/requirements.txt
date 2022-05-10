@@ -1,6 +1,4 @@
-black
-Django
+Django>=3.2
+django-powertables>0.1
 Faker
 faker_airtravel
-isort
-pre-commit

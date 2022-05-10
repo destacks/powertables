@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Change powertables app to be a PyPI installable package
 - Align model and view names with project name
 - Pluralize project name
 - Move generic template and tag to powertables app

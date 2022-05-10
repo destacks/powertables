@@ -1,0 +1,7 @@
+-r example/requirements.txt
+black
+isort
+pre-commit
+setuptools
+twine
+wheel
