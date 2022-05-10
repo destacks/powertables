@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import AirportPowerTableView
+from .views import AirportPowertableView
 
 app_name = "airports"
 urlpatterns = [
-    path("", AirportPowerTableView.as_view(), name="list"),
+    path("", AirportPowertableView.as_view(), name="list"),
 ]

@@ -1,7 +1,7 @@
-from example.powertables.views import PowerTableView
+from example.powertables.views import PowertableView
 
 from .models import Airport
 
 
-class AirportPowerTableView(PowerTableView):
+class AirportPowertableView(PowertableView):
     model = Airport

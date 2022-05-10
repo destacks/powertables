@@ -9,7 +9,7 @@ from django.views.generic.edit import FormMixin
 from .utils import get_model_fields
 
 
-class PowerTableView(FormMixin, ListView):
+class PowertableView(FormMixin, ListView):
     model = None
     paginate_by = 50
 

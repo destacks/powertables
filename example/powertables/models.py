@@ -3,7 +3,7 @@ from django.db import models
 from example.powertables.utils import get_model_fields
 
 
-class PowerTableManager(models.Manager):
+class PowertableManager(models.Manager):
     def get_queryset(self):
         return (
             super()
@@ -12,10 +12,10 @@ class PowerTableManager(models.Manager):
         )
 
 
-class PowerTableModel(models.Model):
+class PowertableModel(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
-    objects = PowerTableManager()
+    objects = PowertableManager()
 
     class Meta:
         abstract = True

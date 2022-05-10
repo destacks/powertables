@@ -1,29 +1,29 @@
 from django.db import models
 
-from example.powertables.models import PowerTableModel
+from example.powertables.models import PowertableModel
 
 
-class Iata(PowerTableModel):
+class Iata(PowertableModel):
     pass
 
 
-class Icao(PowerTableModel):
+class Icao(PowertableModel):
     pass
 
 
-class City(PowerTableModel):
+class City(PowertableModel):
     pass
 
 
-class State(PowerTableModel):
+class State(PowertableModel):
     pass
 
 
-class Country(PowerTableModel):
+class Country(PowertableModel):
     pass
 
 
-class Airport(PowerTableModel):
+class Airport(PowertableModel):
     iata = models.ForeignKey(Iata, on_delete=models.DO_NOTHING)
     icao = models.ForeignKey(Icao, on_delete=models.DO_NOTHING)
     city = models.ForeignKey(City, on_delete=models.DO_NOTHING)
