@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add GitHub Actions YAML CI definition
 - Add some initial tests
 
 ## [0.1.1] - 2022-05-10
