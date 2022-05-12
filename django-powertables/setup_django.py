@@ -4,7 +4,7 @@ from pathlib import Path
 import django
 from django.conf import settings
 
-BASE_DIR = Path(__file__).resolve()
+BASE_DIR = Path(__file__).resolve().parent
 
 
 def setup_django():
