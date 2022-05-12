@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add GitHub Actions YAML CI definition
 - Add some initial tests
 
+### Change
+
+- Use symbolic links in powertables example and assets integration
+
 ## [0.1.1] - 2022-05-10
 
 ### Added

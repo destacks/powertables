@@ -1,8 +1,3 @@
-# Ignore duplicate license texts
-django-powertables/README.md
-django-powertables/LICENSE.txt
-django-powertables/LICENSE.AGPL.txt
-
 # SQLite
 db.sqlite3
 
