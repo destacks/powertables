@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Change
 
+- Put HTML for table creation in powertables app
 - Split venv into three venvs for every use case
 - Use symbolic links in powertables example and assets integration
 
