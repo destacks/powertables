@@ -1,0 +1,5 @@
+-r ../requirements.txt
+Django>=3.2
+setuptools
+twine
+wheel

@@ -4,3 +4,4 @@ include README.md
 recursive-include powertables/templates *
 recursive-include powertables/templatetags *
 recursive-include docs *
+recursive-exclude powertables/tests *

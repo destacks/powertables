@@ -1,3 +1,8 @@
+# Virtual Envs
+venv_base/
+venv_django/
+venv_django_example/
+
 # SQLite
 db.sqlite3
 

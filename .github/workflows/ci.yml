@@ -22,13 +22,19 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          chmod +x venv.sh
+          chmod +x venv_base.sh
+          chmod +x venv_django.sh
+          chmod +x venv_django_example.sh
+          ./venv.sh
       - name: Check Formatting
         run: |
+          . venv_base/bin/activate
           chmod +x format_code.sh
           chmod +x check_formatting.sh
           ./check_formatting.sh
       - name: Test Code
         run: |
+          . venv_django/bin/activate
           chmod +x django-powertables/run_tests.py
           ./django-powertables/run_tests.py

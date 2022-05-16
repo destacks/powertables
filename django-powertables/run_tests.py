@@ -14,7 +14,7 @@ default_labels = [
 def get_suite(*, labels=default_labels):
     from django.test.runner import DiscoverRunner
 
-    runner = DiscoverRunner(verbosity=1)
+    runner = DiscoverRunner(verbosity=2)
     failures = runner.run_tests(labels)
     if failures:
         sys.exit(failures)
