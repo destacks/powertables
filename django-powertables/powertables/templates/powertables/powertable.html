@@ -1,0 +1,50 @@
+{% load powertable_tags %}
+<style>
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+
+    th, td {
+    border: 1px solid #1b1b1b;
+    padding: .5rem;
+    text-align: left;
+    }
+
+    .input_container {
+    display: flex;
+    justify-content: space-between;
+    }
+</style>
+<form onchange="this.submit()"
+      id="table-search-form"
+      action="{{ request.path }}"
+      method="GET">
+    <table>
+        <thead>
+        <tr>
+            {% for field in form %}
+                <th>{{ field.label }}</th>
+            {% endfor %}
+        <tr>
+            {% for field in form %}
+                <th>
+                    <div class="input_container">
+                        <div>{{ field }}</div>
+                        {% include "powertables/_arrows.html" with field=field.name %}
+                    </div>
+                </th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+            <tr>
+                {% for attribute in object|get_attribute %}
+                    <td>{{ attribute }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</form>

@@ -2,56 +2,6 @@
     body {
         font-family: sans-serif;
     }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    th, td {
-        border: 1px solid #1b1b1b;
-        padding: .5rem;
-        text-align: left;
-    }
-
-    .input_container {
-        display: flex;
-        justify-content: space-between;
-    }
 </style>
 <h1>Airports</h1>
-<form onchange="this.submit()"
-      id="table-search-form"
-      action="{% url 'airports:list' %}"
-      method="GET">
-    <table>
-        <thead>
-        <tr>
-            {% for field in form %}
-                <th>{{ field.label }}</th>
-            {% endfor %}
-        <tr>
-            {% for field in form %}
-                <th>
-                    <div class="input_container">
-                        <div>{{ field }}</div>
-                        {% include "powertables/_arrows.html" with field=field.name %}
-                    </div>
-                </th>
-            {% endfor %}
-        </tr>
-        </thead>
-        <tbody>
-        {% for airport in airport_list %}
-            <tr>
-                <td>{{ airport.name }}</td>
-                <td>{{ airport.iata }}</td>
-                <td>{{ airport.icao }}</td>
-                <td>{{ airport.city }}</td>
-                <td>{{ airport.state }}</td>
-                <td>{{ airport.country }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</form>
+{% include "powertables/powertable.html" %}

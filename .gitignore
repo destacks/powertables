@@ -1,7 +1,7 @@
-# Ignore duplicate license texts
-django-powertables/README.md
-django-powertables/LICENSE.txt
-django-powertables/LICENSE.AGPL.txt
+# Virtual Envs
+venv_base/
+venv_django/
+venv_django_example/
 
 # SQLite
 db.sqlite3

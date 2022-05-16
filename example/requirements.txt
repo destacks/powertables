@@ -1,4 +1,5 @@
+-r ../requirements.txt
 Django>=3.2
-django-powertables>0.1
+-e django-powertables
 Faker
 faker_airtravel
