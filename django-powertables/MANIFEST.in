@@ -1,6 +1,7 @@
 include LICENSE.txt
 include LICENSE.AGPL.txt
 include README.md
+recursive-include powertables *
 recursive-include powertables/templates *
 recursive-include powertables/templatetags *
 recursive-include docs *
