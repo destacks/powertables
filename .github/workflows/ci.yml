@@ -11,7 +11,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10", "3.11"]
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
 
     steps:
       - uses: actions/checkout@v3
@@ -39,4 +39,6 @@ jobs:
           chmod +x django-powertables/run_tests.py
           ./django-powertables/run_tests.py
       - name: Run tox
-        run: tox -e py
+        run: |
+          . venv_django/bin/activate
+          tox -e py
