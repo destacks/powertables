@@ -41,4 +41,5 @@ jobs:
       - name: Run tox
         run: |
           . venv_django/bin/activate
+          cd django-powertables
           tox -e py
